@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.sales.SpringBootApplication.model.SalesDetails;
 import com.sales.SpringBootApplication.service.SalesService;
 
 
@@ -18,8 +20,8 @@ public class SalesController {
 	  @Autowired
 	  SalesService salseService;
 	  
-	  @RequestMapping(value="/sales")
-	  private List<SalesService> getAllStudent() 
+	  @GetMapping(value="/sales")
+	  private List<SalesDetails> getAllStudent() 
 	  {
 	  return salseService.getAllSales();
 	  }

@@ -4,12 +4,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.transaction.Transaction;
 
 @Entity
 @Table
 public class SalesDetails {
+
 	@Column
 	private Date Transaction_date ; 
 	
@@ -39,7 +41,7 @@ public class SalesDetails {
 	
 	@Column
 	private Date last_login;
-	
+	@Id
 	@Column
 	private float latitude;
 	
@@ -141,7 +143,12 @@ public class SalesDetails {
 	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
-
+	
+	public SalesDetails()
+	{
+		
+	}
+	
 	public SalesDetails(Date transaction_date, String product, int price, String pament_type, String name, String city,
 			String state, String country, Date account_created, Date last_login, float latitude, float longitude) {
 		super();
